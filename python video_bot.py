@@ -1,13 +1,10 @@
 from telegram import Update
-from telegram.ext import ApplicationBuilder, CommandHandler, MessageHandler, ContextTypes, filters
+from telegram.ext import ApplicationBuilder, CommandHandler, MessageHandler, ContextTypes
+from telegram.ext import filters
 import youtube_dl
 import os
-import logging
 
-# التوكن الخاص بك مباشرة
-TOKEN = '7755739692:AAEA6CEH-FX5r7KkVbkoTCavDZbJIB5RNpI'
-
-logging.basicConfig(level=logging.INFO)
+TOKEN = '7755739692:AAEA6CEH-FX5r7KkVbkoTCavDZbJIB5RNpI'  # لا تنسَ استبداله بتوكنك الحقيقي
 
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await update.message.reply_text('مرحبًا! أرسل لي رابط فيديو من YouTube وسأحاول تحميله لك.')
@@ -34,9 +31,11 @@ async def download_video(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
 def main():
     app = ApplicationBuilder().token(TOKEN).build()
+
     app.add_handler(CommandHandler("start", start))
     app.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, download_video))
+
     app.run_polling()
 
-if _name_ == '_main_':
+if __name__ == '__main__':
     main()
