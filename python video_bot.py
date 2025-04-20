@@ -4,6 +4,7 @@ import youtube_dl
 import os
 import logging
 
+# التوكن الخاص بك مباشرة
 TOKEN = '7755739692:AAEA6CEH-FX5r7KkVbkoTCavDZbJIB5RNpI'
 
 logging.basicConfig(level=logging.INFO)
