@@ -4,7 +4,7 @@ from telegram.ext import filters
 import youtube_dl
 import os
 
-TOKEN = '7755739692:AAEA6CEH-FX5r7KkVbkoTCavDZbJIB5RNpI'  
+TOKEN = '7755739692:AAEA6CEH-FX5r7KkVbkoTCavDZbJIB5RNpI'  # لا تنسَ استبداله بتوكنك الحقيقي
 
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await update.message.reply_text('مرحبًا! أرسل لي رابط فيديو من YouTube وسأحاول تحميله لك.')
